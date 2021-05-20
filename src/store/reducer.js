@@ -1,4 +1,5 @@
 import { SET_MESSAGE_VALUE, SEND_NEW_MESSAGE } from 'src/actions';
+import { getHighestId } from 'src/selector';
 
 const INITIAL_STATE = {
   currentMessage: '',
@@ -35,7 +36,7 @@ const reducer = (state = INITIAL_STATE, action) => {
         messages: [
           ...state.messages,
           {
-            id: 5,
+            id: (getHighestId(state.messages) + 1),
             author: 'Me',
             message: state.currentMessage,
             isOther: false,
