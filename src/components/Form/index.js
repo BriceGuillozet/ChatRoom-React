@@ -1,4 +1,5 @@
 import React from 'react';
+import { Send } from 'react-feather';
 
 import './styles.scss';
 
@@ -10,7 +11,7 @@ const Form = () => (
       placeholder="Saisissez votre message"
     />
     <button type="submit" className="form__submit">
-      &gt;
+      <Send size={32} />
     </button>
   </form>
 );

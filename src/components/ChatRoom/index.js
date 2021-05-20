@@ -6,7 +6,7 @@ import Messages from 'src/components/Messages';
 import Form from 'src/components/Form';
 
 const ChatRoom = () => (
-  <div className="chatRoom">
+  <div className="chatroom">
     <Messages />
     <Form />
   </div>

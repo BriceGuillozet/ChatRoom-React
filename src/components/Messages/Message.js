@@ -4,7 +4,7 @@ import './styles.scss';
 
 const Message = () => (
   <div className="message">
-    <div className="message_author">
+    <div className="message__author">
       Super Chat
     </div>
     <div className="message__body">
