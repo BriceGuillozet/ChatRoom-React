@@ -1,3 +1,7 @@
+import {
+  SET_MESSAGE_VALUE
+} from 'src/actions';
+
 const INITIAL_STATE = {
   currentMessage: '',
   messages: [{
@@ -22,6 +26,11 @@ const INITIAL_STATE = {
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case SET_MESSAGE_VALUE:
+      return {
+        ...state,
+        currentMessage: action.inputValue,
+      };
     default:
       return state;
   }
