@@ -25,6 +25,10 @@
 
     &--other {
       text-align: left;
+      .message__body {
+        background-color: vars.$normal-blue;
+        color: vars.$light-color;
+      }
     }
   }
 }
