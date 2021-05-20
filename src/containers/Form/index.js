@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setMessageValue } from 'src/actions';
+import { setMessageValue, sendNewMessage } from 'src/actions';
 import Form from 'src/components/Form';
 
 const mapStateToProps = (state) => ({
@@ -8,6 +8,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   setMessageValue: (inputValue) => dispatch(setMessageValue(inputValue)),
+  sendNewMessage: () => dispatch(sendNewMessage()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);

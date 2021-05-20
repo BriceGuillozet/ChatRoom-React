@@ -1,6 +1,4 @@
-import {
-  SET_MESSAGE_VALUE
-} from 'src/actions';
+import { SET_MESSAGE_VALUE, SEND_NEW_MESSAGE } from 'src/actions';
 
 const INITIAL_STATE = {
   currentMessage: '',
@@ -12,13 +10,13 @@ const INITIAL_STATE = {
   },
   {
     id: 2,
-    author: 'Cortex',
+    author: 'Me',
     message: 'Comme tous les soirs Minus...',
     isOther: false,
   },
   {
     id: 3,
-    author: 'Cortex',
+    author: 'Me',
     message: 'Tenter des conquérir le monde !',
     isOther: false,
   }],
@@ -30,6 +28,20 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         currentMessage: action.inputValue,
+      };
+    case SEND_NEW_MESSAGE:
+      return {
+        ...state,
+        messages: [
+          ...state.messages,
+          {
+            id: 5,
+            author: 'Me',
+            message: state.currentMessage,
+            isOther: false,
+          },
+        ],
+        currentMessage: '',
       };
     default:
       return state;
