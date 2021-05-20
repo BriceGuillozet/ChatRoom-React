@@ -1,7 +1,19 @@
 @use 'src/styles/vars';
 
+@keyframes pop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .messages {
   padding: 2em;
+  scroll-behavior: smooth;
   flex: 1;
   height: 100%;
   overflow-x: hidden;
@@ -10,10 +22,24 @@
   .message {
     text-align: right;
     margin-bottom: 2rem;
+    color: vars.$normal-blue;
+    animation: pop 0.4s cubic-bezier(0.48, 1.7, 0.87, 1);
 
     &__author {
       margin: 0.5rem 1.5rem;
       display: block;
+      position: relative;
+
+      &::after {
+        content: "";
+        margin-left: auto;
+        position: absolute;
+        right: 1.3em;
+        display: block;
+        width: 0;
+        border-bottom: 1rem solid vars.$light-color;
+        border-left: 1rem solid transparent; 
+      }
     }
 
     &__body {
@@ -25,10 +51,33 @@
 
     &--other {
       text-align: left;
-      .message__body {
-        background-color: vars.$normal-blue;
-        color: vars.$light-color;
-      }
+    }
+  }
+}
+
+
+.message--other {
+  text-align: left;
+  .message__body {
+    background-color: vars.$normal-blue;
+    color: vars.$light-color;
+  }
+
+  .message__author {
+    margin: 0.5rem 1.5rem;
+    display: block;
+    position: relative;
+
+    &::after {
+      content: "";
+      margin-right: auto;
+      position: absolute;
+      left: -28em;
+      display: block;
+      width: 0;
+      border-bottom: 1rem solid vars.$normal-blue;
+      border-right: 1rem solid transparent;
+      border-left: none;
     }
   }
 }

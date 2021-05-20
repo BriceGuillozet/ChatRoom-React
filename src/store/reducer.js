@@ -9,19 +9,13 @@ const INITIAL_STATE = {
   {
     id: 2,
     author: 'Cortex',
-    message: 'Comme tous les soirs Minus !',
+    message: 'Comme tous les soirs Minus...',
     isOther: false,
   },
   {
     id: 3,
-    author: 'Minus',
-    message: 'Manger des frites ?',
-    isOther: true,
-  },
-  {
-    id: 4,
     author: 'Cortex',
-    message: 'Mais non tenter des conquérir le monde !',
+    message: 'Tenter des conquérir le monde !',
     isOther: false,
   }],
 };
