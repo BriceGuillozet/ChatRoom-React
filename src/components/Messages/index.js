@@ -9,9 +9,6 @@ const Messages = ({ messages }) => (
     {messages.map((message) => (
       <Message {...message} key={message.id} />
     ))}
-    <Message author="Me" message="Coucou ça va ?" />
-    <Message author="Other" message="Super et toi ?" isOther />
-    <Message author="Me" message="Ca va !" />
   </div>
 );
 
