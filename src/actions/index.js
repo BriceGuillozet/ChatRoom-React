@@ -3,8 +3,7 @@
 export const SET_MESSAGE_VALUE = 'SET_MESSAGE_VALUE';
 export const SEND_NEW_MESSAGE = 'SEND_NEW_MESSAGE';
 export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';
-export const SET_EMAIL_VALUE = 'SET_EMAIL_VALUE';
-export const SET_PASSWORD_VALUE = 'SET_PASSWORD_VALUE';
+export const SET_FIELD_VALUE = 'SET_FIELD_VALUE';
 
 // Action creators
 /**
@@ -31,17 +30,10 @@ export const toggleSettings = () => ({
 });
 
 /**
- * Change la valeur de l'email
+ * Change la valeur d'un champ, du moment où il est dans settings
  */
-export const setEmailValue = (value) => ({
-  type: SET_EMAIL_VALUE,
-  value,
-});
-
-/**
- * Change la valeur du password
- */
-export const setPasswordValue = (value) => ({
-  type: SET_PASSWORD_VALUE,
+export const setFieldValue = (fieldName, value) => ({
+  type: SET_FIELD_VALUE,
+  fieldName,
   value,
 });
