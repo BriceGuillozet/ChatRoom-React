@@ -3,6 +3,7 @@ import { getHighestId } from 'src/selector';
 
 const INITIAL_STATE = {
   currentMessage: '',
+  pseudo: 'Me',
   messages: [{
     id: 1,
     author: 'Minus',
@@ -37,7 +38,7 @@ const reducer = (state = INITIAL_STATE, action) => {
           ...state.messages,
           {
             id: (getHighestId(state.messages) + 1),
-            author: 'Me',
+            author: state.pseudo,
             message: state.currentMessage,
             isOther: false,
           },
