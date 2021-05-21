@@ -4,6 +4,7 @@ import {
   TOGGLE_SETTINGS,
   SET_FIELD_VALUE,
   SEND_LOGIN,
+  SET_PSEUDO,
 } from 'src/actions';
 import { getHighestId } from 'src/selector';
 
@@ -77,6 +78,15 @@ const reducer = (state = INITIAL_STATE, action) => {
           ...state.settings,
           loading: true,
         },
+      };
+    case SET_PSEUDO:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          loading: false,
+        },
+        pseudo: action.pseudo,
       };
     default:
       return state;

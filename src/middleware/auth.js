@@ -1,6 +1,7 @@
 /* eslint-disable no-case-declarations */
 import {
   SEND_LOGIN,
+  setPseudo,
 } from 'src/actions';
 import axios from 'src/api';
 
@@ -11,6 +12,8 @@ export default (store) => (next) => (action) => {
       axios.post('/login', {
         email,
         password,
+      }).then((res) => {
+        store.dispatch(setPseudo(res.data.pseudo));
       });
       next(action);
       break;

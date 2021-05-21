@@ -5,6 +5,7 @@ export const SEND_NEW_MESSAGE = 'SEND_NEW_MESSAGE';
 export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';
 export const SET_FIELD_VALUE = 'SET_FIELD_VALUE';
 export const SEND_LOGIN = 'SEND_LOGIN';
+export const SET_PSEUDO = 'SET_PSEUDO';
 
 // Action creators
 /**
@@ -42,6 +43,14 @@ export const setFieldValue = (fieldName, value) => ({
 /**
  * Intention de connexion
  */
- export const sendLogin = () => ({
+export const sendLogin = () => ({
   type: SEND_LOGIN,
+});
+
+/**
+ * Met à jour le pseudo
+ */
+export const setPseudo = (pseudo) => ({
+  type: SET_PSEUDO,
+  pseudo,
 });
