@@ -2,6 +2,7 @@
 
 export const SET_MESSAGE_VALUE = 'SET_MESSAGE_VALUE';
 export const SEND_NEW_MESSAGE = 'SEND_NEW_MESSAGE';
+export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';
 
 // Action creators
 /**
@@ -18,4 +19,11 @@ export const setMessageValue = (inputValue) => ({
  */
 export const sendNewMessage = () => ({
   type: SEND_NEW_MESSAGE,
+});
+
+/**
+ * Ouvre ou ferme la fenetre de settings
+ */
+export const toggleSettings = () => ({
+  type: TOGGLE_SETTINGS,
 });

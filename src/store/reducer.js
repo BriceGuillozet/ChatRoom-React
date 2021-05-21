@@ -1,7 +1,10 @@
-import { SET_MESSAGE_VALUE, SEND_NEW_MESSAGE } from 'src/actions';
+import { SET_MESSAGE_VALUE, SEND_NEW_MESSAGE, TOGGLE_SETTINGS } from 'src/actions';
 import { getHighestId } from 'src/selector';
 
 const INITIAL_STATE = {
+  settings: {
+    open: false,
+  },
   currentMessage: '',
   pseudo: 'Me',
   messages: [{
@@ -41,6 +44,14 @@ const reducer = (state = INITIAL_STATE, action) => {
           },
         ],
         currentMessage: '',
+      };
+    case TOGGLE_SETTINGS:
+      return {
+        ...state,
+        settings: {
+          ...state.settings,
+          open: !state.settings.open,
+        },
       };
     default:
       return state;
