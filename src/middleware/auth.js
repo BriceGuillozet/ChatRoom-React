@@ -1,14 +1,15 @@
-/* eslint-disable no-case-declarations */
 import {
   SEND_LOGIN,
   setPseudo,
+  // SET_PSEUDO,
+  // setColor,
 } from 'src/actions';
 import axios from 'src/api';
 
 export default (store) => (next) => (action) => {
+  const { settings: { email, password } } = store.getState();
   switch (action.type) {
     case SEND_LOGIN:
-      const { settings: { email, password } } = store.getState();
       axios.post('/login', {
         email,
         password,
@@ -17,6 +18,13 @@ export default (store) => (next) => (action) => {
       });
       next(action);
       break;
+    // case SET_PSEUDO:
+    //   axios.get(`/theme/${email}`)
+    //     .then((res) => {
+    //       store.dispatch(setColor(res.data.color));
+    //     });
+    //   next(action);
+    //   break;
     default:
       next(action);
       break;

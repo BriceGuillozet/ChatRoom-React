@@ -5,6 +5,7 @@ import {
   SET_FIELD_VALUE,
   SEND_LOGIN,
   SET_PSEUDO,
+  // SET_COLOR,
 } from 'src/actions';
 import { getHighestId } from 'src/selector';
 
@@ -17,6 +18,7 @@ const INITIAL_STATE = {
   },
   currentMessage: '',
   pseudo: 'Me',
+  color: null,
   messages: [{
     id: 1,
     author: 'Minus',
@@ -85,9 +87,15 @@ const reducer = (state = INITIAL_STATE, action) => {
         settings: {
           ...state.settings,
           loading: false,
+          open: false,
         },
         pseudo: action.pseudo,
       };
+    // case SET_COLOR:
+    //   return {
+    //     ...state,
+    //     color: action.color,
+    //   };
     default:
       return state;
   }

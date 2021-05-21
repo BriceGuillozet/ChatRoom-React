@@ -6,6 +6,7 @@ export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';
 export const SET_FIELD_VALUE = 'SET_FIELD_VALUE';
 export const SEND_LOGIN = 'SEND_LOGIN';
 export const SET_PSEUDO = 'SET_PSEUDO';
+// export const SET_COLOR = 'SET_COLOR';
 
 // Action creators
 /**
@@ -54,3 +55,11 @@ export const setPseudo = (pseudo) => ({
   type: SET_PSEUDO,
   pseudo,
 });
+
+// /**
+//  * Met à jour la couleur des messages
+//  */
+// export const setColor = (color) => ({
+//   type: SET_COLOR,
+//   color,
+// });
