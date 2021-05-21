@@ -7,7 +7,9 @@ import InputField from 'src/containers/Settings/InputField';
 
 import './styles.scss';
 
-const Settings = ({ open, openToggle, onLogin }) => {
+const Settings = ({
+  open, openToggle, onLogin, loading,
+}) => {
   const handleSubmitSettings = (evt) => {
     evt.preventDefault();
     onLogin();
@@ -27,7 +29,9 @@ const Settings = ({ open, openToggle, onLogin }) => {
           autoComplete="new-password"
           placeholder="Mot de passe"
         />
-        <button type="submit">Envoyer</button>
+        <button type="submit" disabled={loading}>
+          {loading ? 'Chargement...' : 'Envoyer'}
+        </button>
       </form>
     </div>
   );
@@ -35,12 +39,14 @@ const Settings = ({ open, openToggle, onLogin }) => {
 
 Settings.propTypes = {
   open: PropTypes.bool,
+  loading: PropTypes.bool,
   openToggle: PropTypes.func,
   onLogin: PropTypes.func,
 };
 
 Settings.defaultProps = {
   open: false,
+  loading: false,
   openToggle: () => {},
   onLogin: () => {},
 };
