@@ -8,19 +8,16 @@ const INITIAL_STATE = {
     id: 1,
     author: 'Minus',
     message: "Qu'est ce qu'on va faire ce soir Cortex ?",
-    isOther: true,
   },
   {
     id: 2,
     author: 'Me',
     message: 'Comme tous les soirs Minus...',
-    isOther: false,
   },
   {
     id: 3,
     author: 'Me',
     message: 'Tenter des conquérir le monde !',
-    isOther: false,
   }],
 };
 
