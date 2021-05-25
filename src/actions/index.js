@@ -2,10 +2,12 @@
 
 export const SET_MESSAGE_VALUE = 'SET_MESSAGE_VALUE';
 export const SEND_NEW_MESSAGE = 'SEND_NEW_MESSAGE';
+export const ADD_MESSAGE = 'ADD_NEW_MESSAGE';
 export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';
 export const SET_FIELD_VALUE = 'SET_FIELD_VALUE';
 export const SEND_LOGIN = 'SEND_LOGIN';
 export const SET_PSEUDO = 'SET_PSEUDO';
+export const WS_CONNECT = 'WS_CONNECT';
 // export const SET_COLOR = 'SET_COLOR';
 
 // Action creators
@@ -23,6 +25,16 @@ export const setMessageValue = (inputValue) => ({
  */
 export const sendNewMessage = () => ({
   type: SEND_NEW_MESSAGE,
+});
+
+/**
+ * Ajoute un nouveau message au tableau des messages
+ */
+export const addMessage = (id, author, message) => ({
+  type: ADD_MESSAGE,
+  id,
+  author,
+  message,
 });
 
 /**
@@ -63,3 +75,10 @@ export const setPseudo = (pseudo) => ({
 //   type: SET_COLOR,
 //   color,
 // });
+
+/**
+ * Connexion WebSocket serveur socket.io
+ */
+export const wsConnect = () => ({
+  type: WS_CONNECT,
+});
