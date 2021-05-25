@@ -8,5 +8,16 @@
     </head>
     <body>
         <div id="root"></div>
+
+        <script src="http://localhost:3001/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io('http://localhost:3001');
+
+            socket.on('receive_message', (message) => {
+                console.log('Je reçois : ', message);
+            });
+
+            socket.emit('send_message', {author: 'Computer', message: 'Bonjour !'});
+        </script>
     </body>
 </html>
